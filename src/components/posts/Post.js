@@ -16,18 +16,15 @@ import HeartIcon from 'react-native-vector-icons/AntDesign';
 import MessageIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ShareIcon from 'react-native-vector-icons/FontAwesome5';
 
+import {LogBox} from 'react-native';
+LogBox.ignoreAllLogs();
+
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 const Post = props => {
   const [post, setPost] = useState(props.post);
   const [playPause, setPlayPause] = useState();
-
-  try {
-    console.log('User Name', post.user.userName);
-  } catch (error) {
-    console.log('erorr', error);
-  }
 
   const [postLiked, setPostLiked] = useState(false);
 
@@ -61,7 +58,7 @@ const Post = props => {
 
       <View style={styles.functionalityButtonView}>
         <View style={styles.functionalityButtonRightView}>
-          {/* <Image style={styles.profileImage} source={post.user.userImage} /> */}
+          <Image style={styles.profileImage} source={post.user?.userImage} />
 
           <TouchableOpacity
             style={styles.rightIconTextView}
@@ -71,31 +68,31 @@ const Post = props => {
               size={30}
               color={postLiked ? 'red' : 'white'}
             />
-            <Text style={styles.iconCounterText}>{post.likes}</Text>
+            <Text style={styles.iconCounterText}>{post?.likes}</Text>
           </TouchableOpacity>
 
           <View style={styles.rightIconTextView}>
             <MessageIcon name="message-processing" size={30} color="white" />
-            <Text style={styles.iconCounterText}>{post.comments}</Text>
+            <Text style={styles.iconCounterText}>{post?.comments}</Text>
           </View>
 
           <View style={styles.rightIconTextView}>
             <ShareIcon name="share-alt" size={30} color="white" />
-            <Text style={styles.iconCounterText}>{post.shares}</Text>
+            <Text style={styles.iconCounterText}>{post?.shares}</Text>
           </View>
         </View>
 
         <View style={styles.nameCommentSongView}>
-          {/* <Text style={styles.nameText}>{post.user.userName}</Text> */}
-          <Text style={styles.commentText}>{post.description}</Text>
+          <Text style={styles.nameText}>{post.user?.userName}</Text>
+          <Text style={styles.commentText}>{post?.description}</Text>
 
           <View style={styles.songView}>
             <View style={styles.songIconTextView}>
               <MusicIcon name="music" size={22} color="white" />
-              <Text style={styles.songText}>{post.song}</Text>
+              <Text style={styles.songText}>{post?.song}</Text>
             </View>
 
-            <Image style={styles.songImage} source={post.songImage} />
+            <Image style={styles.songImage} source={post?.songImage} />
           </View>
         </View>
       </View>
