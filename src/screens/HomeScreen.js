@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, StatusBar, StyleSheet} from 'react-native';
+import {View, StatusBar, StyleSheet, FlatList, Dimensions} from 'react-native';
 
 import Post from '../components/posts/Post';
+import {PostsData} from '../assets/data/PostsData';
 
+const height = Dimensions.get('window').height;
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
@@ -11,7 +13,15 @@ const HomeScreen = () => {
         barStyle="dark-content"
         backgroundColor="transparent"
       />
-      <Post />
+      <FlatList
+        data={PostsData}
+        showsVerticalScrollIndicator={false}
+        snapToInterval={height}
+        snapToAlignment="start"
+        decelerationRate="fast"
+        renderItem={({item}) => <Post post={item} />}
+      />
+      <Post post={PostsData} />
     </View>
   );
 };

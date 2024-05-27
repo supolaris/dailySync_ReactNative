@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   View,
   TouchableWithoutFeedback,
+  TouchableOpacity,
   StyleSheet,
   Dimensions,
   Text,
@@ -18,12 +19,29 @@ import ShareIcon from 'react-native-vector-icons/FontAwesome5';
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-const Post = () => {
+const Post = props => {
+  const [post, setPost] = useState(props.post);
   const [playPause, setPlayPause] = useState();
 
+  try {
+    console.log('User Name', post.user.userName);
+  } catch (error) {
+    console.log('erorr', error);
+  }
+
+  const [postLiked, setPostLiked] = useState(false);
+
   const onPayPausePressed = () => {
-    //console.warn('paused');
     setPlayPause(!playPause);
+  };
+
+  const onLikesPressed = () => {
+    const managePostLike = postLiked ? -1 : 1;
+    setPost({
+      ...post,
+      likes: post.likes + managePostLike,
+    });
+    setPostLiked(!postLiked);
   };
 
   return (
@@ -33,7 +51,7 @@ const Post = () => {
         onPress={onPayPausePressed}>
         <Video
           style={styles.video}
-          source={require('../../assets/videos/reels/skateboarding.mp4')}
+          source={post.videoUrl}
           onError={e => console.log('Error is: ', e)}
           resizeMode="cover"
           repeat={true}
@@ -43,41 +61,41 @@ const Post = () => {
 
       <View style={styles.functionalityButtonView}>
         <View style={styles.functionalityButtonRightView}>
-          <Image
-            style={styles.profileImage}
-            source={require('../../assets/images/isabellaGrace.jpg')}
-          />
+          {/* <Image style={styles.profileImage} source={post.user.userImage} /> */}
 
-          <View style={styles.rightIconTextView}>
-            <HeartIcon name="heart" size={30} color="white" />
-            <Text style={styles.iconCounterText}>100</Text>
-          </View>
+          <TouchableOpacity
+            style={styles.rightIconTextView}
+            onPress={onLikesPressed}>
+            <HeartIcon
+              name="heart"
+              size={30}
+              color={postLiked ? 'red' : 'white'}
+            />
+            <Text style={styles.iconCounterText}>{post.likes}</Text>
+          </TouchableOpacity>
 
           <View style={styles.rightIconTextView}>
             <MessageIcon name="message-processing" size={30} color="white" />
-            <Text style={styles.iconCounterText}>120</Text>
+            <Text style={styles.iconCounterText}>{post.comments}</Text>
           </View>
 
           <View style={styles.rightIconTextView}>
             <ShareIcon name="share-alt" size={30} color="white" />
-            <Text style={styles.iconCounterText}>300</Text>
+            <Text style={styles.iconCounterText}>{post.shares}</Text>
           </View>
         </View>
 
         <View style={styles.nameCommentSongView}>
-          <Text style={styles.nameText}>@Isabella Grace</Text>
-          <Text style={styles.commentText}>Cool!!! it is good practice</Text>
+          {/* <Text style={styles.nameText}>{post.user.userName}</Text> */}
+          <Text style={styles.commentText}>{post.description}</Text>
 
           <View style={styles.songView}>
             <View style={styles.songIconTextView}>
               <MusicIcon name="music" size={22} color="white" />
-              <Text style={styles.songText}>Linkin Park - In the end</Text>
+              <Text style={styles.songText}>{post.song}</Text>
             </View>
 
-            <Image
-              style={styles.songImage}
-              source={require('../../assets/images/isabellaGrace.jpg')}
-            />
+            <Image style={styles.songImage} source={post.songImage} />
           </View>
         </View>
       </View>

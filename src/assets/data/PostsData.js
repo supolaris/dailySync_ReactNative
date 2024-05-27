@@ -1,0 +1,161 @@
+export const PostsData = [
+  {
+    id: 1,
+    videoUrl: require('../../assets/videos/reels/skateboarding.mp4'),
+    user: {
+      userId: 1,
+      userName: 'Isabella Grace',
+      userImage: require('../../assets/images/isabellaGrace.jpg'),
+    },
+    description: 'Cool!! it is good practice',
+    song: 'Linkin Park - In the end',
+    songImage: require('../../assets/images/isabellaGrace.jpg'),
+    likes: 100,
+    comments: 120,
+    shares: 300,
+  },
+
+  // {
+  //   id: 2,
+  //   videoUrl: require('../../assets/videos/reels/coding3.mp4'),
+  //   user: {
+  //     userId: 2,
+  //     userName: 'Ethan James',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'Loving this song!',
+  //   song: 'Adele - Hello',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 250,
+  //   comments: 80,
+  //   shares: 150,
+  // },
+
+  // {
+  //   id: 3,
+  //   videoUrl: require('../../assets/videos/reels/eatingFood.mp4'),
+  //   user: {
+  //     userId: 3,
+  //     userName: 'Ava Marie',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: "Can't stop listening!",
+  //   song: 'Ed Sheeran - Shape of You',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 300,
+  //   comments: 150,
+  //   shares: 200,
+  // },
+
+  // {
+  //   id: 4,
+  //   videoUrl: require('../../assets/videos/reels/glitters.mp4'),
+  //   user: {
+  //     userId: 4,
+  //     userName: 'Noah Liam',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'This is my jam!',
+  //   song: "Drake - God's Plan",
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 400,
+  //   comments: 200,
+  //   shares: 250,
+  // },
+
+  // {
+  //   id: 5,
+  //   videoUrl: require('../../assets/videos/reels/study.mp4'),
+  //   user: {
+  //     userId: 5,
+  //     userName: 'Sophia Emma',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'Amazing track',
+  //   song: 'Billie Eilish - Bad Guy',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 350,
+  //   comments: 180,
+  //   shares: 300,
+  // },
+
+  // {
+  //   id: 6,
+  //   videoUrl: require('../../assets/videos/reels/coding1.mp4'),
+  //   user: {
+  //     userId: 6,
+  //     userName: 'Oliver Lucas',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'Old but gold!',
+  //   song: 'Queen - Bohemian Rhapsody',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 500,
+  //   comments: 220,
+  //   shares: 400,
+  // },
+
+  // {
+  //   id: 7,
+  //   videoUrl: require('../../assets/videos/reels/roofTop.mp4'),
+  //   user: {
+  //     userId: 7,
+  //     userName: 'Mia Harper',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'This brings back memories.',
+  //   song: 'Backstreet Boys - I Want It That Way',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 450,
+  //   comments: 190,
+  //   shares: 350,
+  // },
+
+  // {
+  //   id: 8,
+  //   videoUrl: require('../../assets/videos/reels/coding2.mp4'),
+  //   user: {
+  //     userId: 8,
+  //     userName: 'Elijah Mason',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'Such a vibe!',
+  //   song: 'Post Malone - Circles',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 320,
+  //   comments: 130,
+  //   shares: 270,
+  // },
+
+  // {
+  //   id: 9,
+  //   videoUrl: require('../../assets/videos/reels/food.mp4'),
+  //   user: {
+  //     userId: 9,
+  //     userName: 'Charlotte Lily',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'On repeat!',
+  //   song: 'Taylor Swift - Love Story',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 280,
+  //   comments: 100,
+  //   shares: 240,
+  // },
+
+  // {
+  //   id: 10,
+  //   videoUrl: require('../../assets/videos/reels/coding2.mp4'),
+  //   user: {
+  //     userId: 10,
+  //     userName: 'Lucas Henry',
+  //     userImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   },
+  //   description: 'Epic tune!',
+  //   song: 'Imagine Dragons - Believer',
+  //   songImage: require('../../assets/images/isabellaGrace.jpg'),
+  //   like: 370,
+  //   comments: 170,
+  //   shares: 330,
+  // },
+];
